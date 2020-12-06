@@ -1,0 +1,54 @@
+﻿<div id="toolbar"></div>
+
+<div id="foodGrid"></div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $("#toolbar").dxToolbar({
+            items: [
+                {
+                    location: 'center',
+                    locateInMenu: 'auto',
+                    template: function() {
+                        return $("<div class='toolbar-label'><b>Food</b></div>");
+                    }
+                }
+            ]
+        });
+
+        function getFood() {
+            $.ajax({
+                url: '@Url.Action("Get", "FoodApi")',
+                success: function (result) {
+                    console.debug(result);
+                },
+                error: function () {
+                }
+            });
+        }
+
+        $("#foodGrid").dxDataGrid({
+            dataSource: DevExpress.data.AspNet.createStore({
+                key: "Id",
+                loadUrl: '@Url.Action("Get", "FoodApi")'
+            }),
+            remoteOperations: { groupPaging: true },
+            columns: [
+                "Id",
+                "Name"
+            ],
+            showBorders: true,
+            selection: {
+            mode: "multiple"
+            }
+        });
+    </script>
+}
+
+<style>
+    .toolbar-label,
+    .toolbar-label > b {
+        font-size: 16px;
+    }
+</style>
