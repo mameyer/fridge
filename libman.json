@@ -65,10 +65,20 @@
             "provider": "filesystem",
             "destination": "wwwroot/css/devextreme/fonts"
         },
-        {
-            "library": "node_modules/devextreme-aspnet-data/js/dx.aspnet.data.js",
-            "provider": "filesystem",
-            "destination": "wwwroot/js/devextreme"
-        }
+      {
+        "library": "node_modules/devextreme-aspnet-data/js/dx.aspnet.data.js",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/devextreme"
+      },
+      {
+        "library": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/bootstrap"
+      },
+      {
+        "library": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "provider": "filesystem",
+        "destination": "wwwroot/css/bootstrap"
+      }
     ]
 }

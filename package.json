@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "4.6.0",
     "devextreme": "^20.2.4",
     "devextreme-aspnet-data": "^2.7.2"
   }

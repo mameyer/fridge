@@ -24,5 +24,11 @@ namespace fridge.Controllers.api
 
             return food;
         }
+
+        [HttpPost]
+        public object Update(object data)
+        {
+            return true;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿<div id="toolbar"></div>
 
 <div id="foodGrid"></div>
+@*<div id="gridContainer"></div>*@
 
 @section Scripts
 {
@@ -31,18 +32,32 @@
         $("#foodGrid").dxDataGrid({
             dataSource: DevExpress.data.AspNet.createStore({
                 key: "Id",
-                loadUrl: '@Url.Action("Get", "FoodApi")'
+                loadUrl: '@Url.Action("Get", "FoodApi")',
+                updateUrl: '@Url.Action("Update", "FoodApi")'
             }),
             remoteOperations: { groupPaging: true },
             columns: [
                 "Id",
                 "Name"
             ],
+            editing: {
+                allowUpdating: true
+            },
             showBorders: true,
             selection: {
             mode: "multiple"
             }
         });
+
+        //$("#gridContainer").dxDataGrid({
+        //    dataSource: [
+        //        {
+        //            CompanyName: "Hannes"
+        //        }
+        //    ],
+        //    columns: ["CompanyName", "City", "State", "Phone", "Fax"],
+        //    showBorders: true
+        //});
     </script>
 }
 
